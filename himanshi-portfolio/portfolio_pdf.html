@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himanshi Rajput — Editorial Portfolio (Multi-Page PDF)</title>
+  <meta name="description" content="Multi-page editorial portfolio for Himanshi Rajput, Content & Social Media Specialist at Seoul Sip.">
+
+  <!-- Google Fonts: Bebas Neue, Playfair Display, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       EDITORIAL PDF PORTFOLIO STYLES (A4 MULTI-PAGE PRINT & EXPORT ENGINE)
+       ========================================================================== */
+    :root {
+      --color-burgundy: #651522;
+      --color-wine: #4B0D19;
+      --color-cream: #F7F2EA;
+      --color-cream-light: #FCFAF6;
+      --color-cream-subtle: #EFE9DE;
+      --color-blush: #D9B7B5;
+      --color-blush-light: #F2E5E4;
+      --color-charcoal: #282426;
+      --color-charcoal-muted: #5A5255;
+      --color-white: #FFFFFF;
+      --color-border: rgba(40, 36, 38, 0.15);
+
+      --font-headline: 'Bebas Neue', 'Oswald', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #E2DDD5;
+      font-family: var(--font-sans);
+      color: var(--color-charcoal);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Print Controls Toolbar (Screen only) */
+    .print-controls-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--color-charcoal);
+      color: var(--color-white);
+      padding: 0.85rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-action {
+      background: var(--color-burgundy);
+      color: var(--color-cream);
+      border: 1px solid var(--color-burgundy);
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: var(--color-wine);
+      color: var(--color-white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-cream);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-cream);
+    }
+
+    /* A4 Multi-page Container */
+    .pdf-document {
+      width: 210mm;
+      margin: 20mm auto;
+      background: var(--color-cream);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Each Individual Page */
+    .pdf-page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      background-color: var(--color-cream);
+      padding: 18mm 20mm 16mm 20mm;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 2px dashed rgba(40, 36, 38, 0.2);
+    }
+
+    /* Page Running Header & Footer */
+    .page-running-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 3.5mm;
+      border-bottom: 1px solid rgba(40, 36, 38, 0.15);
+      font-size: 8pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-charcoal-muted);
+    }
+
+    .page-running-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 3.5mm;
+      border-top: 1px solid rgba(40, 36, 38, 0.15);
+      font-size: 7.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal-muted);
+    }
+
+    .page-number {
+      font-weight: 700;
+      color: var(--color-burgundy);
+    }
+
+    /* Editorial Styling Components */
+    .editorial-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      margin-bottom: 4mm;
+    }
+
+    .editorial-tag::before {
+      content: "•••";
+      letter-spacing: 0.15em;
+    }
+
+    .headline-giant {
+      font-family: var(--font-headline);
+      font-size: 52pt;
+      line-height: 0.88;
+      letter-spacing: 0.03em;
+      color: var(--color-charcoal);
+      text-transform: uppercase;
+    }
+
+    .headline-giant .accent-wine {
+      color: var(--color-burgundy);
+    }
+
+    .script-subhead {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 20pt;
+      color: var(--color-burgundy);
+      margin-top: -1mm;
+      display: block;
+    }
+
+    .editorial-border {
+      border: 1px solid var(--color-charcoal);
+    }
+
+    /* ==========================================================================
+       PAGE 1: COVER & HERO
+       ========================================================================== */
+    .page-1-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      padding: 6mm 0;
+    }
+
+    .cover-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4mm;
+    }
+
+    .cover-title-block {
+      margin-bottom: 5mm;
+    }
+
+    .cover-main-grid {
+      display: grid;
+      grid-template-columns: 88mm 74mm;
+      gap: 8mm;
+      align-items: center;
+      margin: 3mm 0;
+    }
+
+    .cover-portrait-box {
+      width: 100%;
+      height: 124mm;
+      border: 1px solid var(--color-charcoal);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 6px 6px 0 var(--color-blush-light), 6px 6px 0 1px var(--color-charcoal);
+    }
+
+    .cover-portrait-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .cover-badge {
+      position: absolute;
+      bottom: 4mm;
+      left: 4mm;
+      right: 4mm;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--color-charcoal);
+      padding: 3mm 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-text-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+    }
+
+    .cover-intro-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 5mm;
+    }
+
+    .cover-supporting-line {
+      font-family: var(--font-headline);
+      font-size: 15pt;
+      line-height: 1.15;
+      color: var(--color-burgundy);
+      margin-bottom: 3mm;
+      text-transform: uppercase;
+    }
+
+    .cover-quote {
+      font-size: 8.5pt;
+      line-height: 1.6;
+      color: var(--color-charcoal-muted);
+    }
+
+    .cover-meta-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 4mm 5mm;
+    }
+
+    .meta-row-item {
+      margin-bottom: 2mm;
+    }
+
+    .meta-row-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-burgundy);
+      display: block;
+    }
+
+    .meta-val {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--color-charcoal);
+    }
+
+    /* ==========================================================================
+       PAGE 2: WHO I AM & SKILLS MATRIX
+       ========================================================================== */
+    .page-2-content {
+      padding: 5mm 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 5mm;
+    }
+
+    .section-title {
+      font-family: var(--font-headline);
+      font-size: 34pt;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      color: var(--color-charcoal);
+    }
+
+    .p2-layout-grid {
+      display: grid;
+      grid-template-columns: 92mm 70mm;
+      gap: 8mm;
+      align-items: start;
+    }
+
+    .narrative-p {
+      font-size: 8.8pt;
+      line-height: 1.65;
+      color: #383436;
+      margin-bottom: 3.5mm;
+    }
+
+    .academic-callout {
+      background: var(--color-white);
+      border-left: 3px solid var(--color-burgundy);
+      padding: 3.5mm 4mm;
+      font-size: 7.8pt;
+      color: var(--color-charcoal-muted);
+      line-height: 1.5;
+      border-top: 1px solid var(--color-border);
+      border-right: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .skills-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-charcoal);
+      padding: 4mm;
+      box-shadow: 4px 4px 0 var(--color-blush-light);
+    }
+
+    .skills-title {
+      font-family: var(--font-headline);
+      font-size: 14pt;
+      color: var(--color-charcoal);
+      margin-bottom: 2mm;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5mm;
+    }
+
+    .skills-grid-p2 {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8mm;
+    }
+
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-cream-light);
+      border: 1px solid rgba(40, 36, 38, 0.08);
+      padding: 2mm 2.5mm;
+      font-size: 7.5pt;
+      font-weight: 600;
+    }
+
+    .skill-row-tag {
+      font-size: 6.5pt;
+      color: var(--color-burgundy);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       PAGE 3: SOCIAL MEDIA IN PRACTICE (SEOUL SIP)
+       ========================================================================== */
+    .page-3-content {
+      padding: 4mm 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 4mm;
+    }
+
+    .seoul-sip-banner-p3 {
+      background: var(--color-wine);
+      color: var(--color-cream);
+      padding: 4.5mm 6mm;
+      border: 1px solid var(--color-wine);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .p3-grid {
+      display: grid;
+      grid-template-columns: 88mm 74mm;
+      gap: 8mm;
+      align-items: start;
+    }
+
+    .resp-box-p3 {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 3.2mm 4mm;
+      margin-bottom: 2.5mm;
+    }
+
+    .resp-box-p3:last-child {
+      margin-bottom: 0;
+    }
+
+    .resp-num-p3 {
+      font-family: var(--font-headline);
+      font-size: 11pt;
+      color: var(--color-burgundy);
+      line-height: 1;
+    }
+
+    .resp-title-p3 {
+      font-family: var(--font-headline);
+      font-size: 11pt;
+      letter-spacing: 0.02em;
+      color: var(--color-charcoal);
+      margin-bottom: 1mm;
+    }
+
+    .resp-desc-p3 {
+      font-size: 7.8pt;
+      line-height: 1.5;
+      color: var(--color-charcoal-muted);
+    }
+
+    .media-card-p3 {
+      background: var(--color-white);
+      border: 1px solid var(--color-charcoal);
+      padding: 2.5mm;
+      box-shadow: 4px 4px 0 var(--color-blush-light);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card-p3 img {
+      width: 100%;
+      height: 155mm;
+      object-fit: contain;
+      background: #FFFFFF;
+      border: 1px solid rgba(40, 36, 38, 0.1);
+      display: block;
+    }
+
+    .photo-split-p3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 3mm;
+    }
+
+    .mini-photo-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 2mm;
+    }
+
+    .mini-photo-box img {
+      width: 100%;
+      height: 28mm;
+      object-fit: cover;
+      margin-bottom: 1.2mm;
+    }
+
+    .mini-photo-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================================================================
+       PAGE 4: CONTENT CONCEPTS
+       ========================================================================== */
+    .page-4-content {
+      padding: 4mm 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 4.5mm;
+    }
+
+    .concepts-p4-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5mm;
+    }
+
+    .concept-item-p4 {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 4mm 5mm;
+      display: grid;
+      grid-template-columns: 48mm 1fr;
+      gap: 5mm;
+      align-items: center;
+    }
+
+    .concept-p4-left {
+      border-right: 1px solid var(--color-border);
+      padding-right: 4mm;
+    }
+
+    .concept-p4-tag {
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: var(--color-burgundy);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .concept-p4-title {
+      font-family: var(--font-headline);
+      font-size: 14pt;
+      line-height: 1.05;
+      color: var(--color-charcoal);
+    }
+
+    .concept-p4-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+
+    .concept-detail-line {
+      font-size: 7.8pt;
+      line-height: 1.45;
+      color: var(--color-charcoal-muted);
+    }
+
+    .concept-quote-p4 {
+      background: var(--color-cream);
+      border-left: 2px solid var(--color-burgundy);
+      padding: 1.5mm 3mm;
+      font-size: 7.4pt;
+      font-style: italic;
+      color: var(--color-charcoal);
+      margin-top: 1mm;
+    }
+
+    /* ==========================================================================
+       PAGE 5: SELECTED DISCIPLINES & CLOSING CONTACT
+       ========================================================================== */
+    .page-5-content {
+      padding: 4mm 0;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .disciplines-p5-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .disc-card-p5 {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 3.5mm 4mm;
+    }
+
+    .disc-num-p5 {
+      font-family: var(--font-headline);
+      font-size: 13pt;
+      color: var(--color-blush);
+      line-height: 1;
+    }
+
+    .disc-title-p5 {
+      font-family: var(--font-headline);
+      font-size: 11pt;
+      color: var(--color-charcoal);
+      margin-bottom: 1mm;
+    }
+
+    .disc-desc-p5 {
+      font-size: 7.4pt;
+      line-height: 1.45;
+      color: var(--color-charcoal-muted);
+    }
+
+    .closing-spread-p5 {
+      background: var(--color-wine);
+      color: var(--color-cream);
+      padding: 8mm 10mm;
+      border: 1px solid var(--color-wine);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 8mm;
+      align-items: center;
+    }
+
+    .closing-title-p5 {
+      font-family: var(--font-headline);
+      font-size: 32pt;
+      line-height: 0.9;
+      color: var(--color-cream);
+      margin-bottom: 2.5mm;
+    }
+
+    .closing-desc-p5 {
+      font-size: 8pt;
+      line-height: 1.55;
+      color: var(--color-blush-light);
+      margin-bottom: 3mm;
+    }
+
+    .contact-box-p5 {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4mm 5mm;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5mm;
+    }
+
+    .contact-line-p5 .lbl {
+      font-size: 6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-blush);
+      display: block;
+    }
+
+    .contact-line-p5 .val {
+      font-size: 8.5pt;
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    /* Print Specific Media Query */
+    @media print {
+      body {
+        background: transparent !important;
+      }
+      .print-controls-bar {
+        display: none !important;
+      }
+      .pdf-document {
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+      }
+      .pdf-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        border-bottom: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Only Print / Export Controls -->
+  <div class="print-controls-bar">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="index.html" class="btn-outline">← Back to Portfolio Website</a>
+      <span style="font-size: 0.85rem; color: var(--color-blush);">Himanshi Rajput &bull; Editorial PDF Portfolio View</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <button onclick="window.print()" class="btn-action">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Print / Save as PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="pdf-document" id="pdfDocument">
+
+    <!-- =======================================================================
+         PAGE 1: COVER & HERO
+         ======================================================================= -->
+    <div class="pdf-page">
+      <div class="page-running-header">
+        <span>Himanshi Rajput &bull; Content &amp; Social Media</span>
+        <span>Editorial Portfolio &bull; 2026 Edition</span>
+      </div>
+
+      <div class="page-1-content">
+        <div class="cover-top-meta">
+          <span class="editorial-tag">Creative Direction &bull; Personal Portfolio</span>
+          <span style="font-size: 7.5pt; font-weight: 600; letter-spacing: 0.1em; color: var(--color-burgundy);">Bhopal, India</span>
+        </div>
+
+        <div class="cover-title-block">
+          <h1 class="headline-giant">
+            SOCIAL MEDIA<span style="color: var(--color-burgundy); font-size: 0.7em;">✳</span>
+          </h1>
+          <span class="script-subhead">&amp; Content Specialist</span>
+        </div>
+
+        <div class="cover-main-grid">
+          <!-- Portrait Box -->
+          <div class="cover-portrait-box">
+            <img src="assets/images/himanshi_portrait.jpg" alt="Himanshi Rajput Portrait">
+            <div class="cover-badge">
+              <div>
+                <div style="font-family: var(--font-headline); font-size: 10pt; line-height: 1;">HIMANSHI RAJPUT</div>
+                <div style="font-size: 6.5pt; color: var(--color-burgundy); font-weight: 700; text-transform: uppercase;">Seoul Sip Social Media Team</div>
+              </div>
+              <div style="font-family: var(--font-headline); font-size: 11pt; color: var(--color-burgundy);">2026</div>
+            </div>
+          </div>
+
+          <!-- Editorial Text Panel -->
+          <div class="cover-text-panel">
+            <div class="cover-intro-card">
+              <span class="editorial-tag">Statement</span>
+              <div class="cover-supporting-line">Creative ideas. Clear communication. Meaningful digital experiences.</div>
+              <p class="cover-quote">
+                "I'm a Computer Science and Data Science student exploring the intersection of content, brand communication, and digital experiences. I currently contribute to Seoul Sip's social media activities, where I participate in content ideation, promotional brainstorming, and community engagement."
+              </p>
+            </div>
+
+            <div class="cover-meta-card">
+              <div class="meta-row-item">
+                <span class="meta-label">Current Role</span>
+                <span class="meta-val">Social Media Management Team @ Seoul Sip</span>
+              </div>
+              <div class="meta-row-item">
+                <span class="meta-label">Focus Areas</span>
+                <span class="meta-val">Content Planning, Brand Voice &amp; Community</span>
+              </div>
+              <div class="meta-row-item">
+                <span class="meta-label">Academic Profile</span>
+                <span class="meta-val">B.Tech CS &amp; Data Science (3rd Year)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-running-footer">
+        <span>Seoul Sip Collaboration</span>
+        <span class="page-number">01 / 05</span>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         PAGE 2: WHO I AM & SKILLS MATRIX
+         ======================================================================= -->
+    <div class="pdf-page">
+      <div class="page-running-header">
+        <span>Himanshi Rajput &bull; Profile &amp; Background</span>
+        <span>Editorial Portfolio</span>
+      </div>
+
+      <div class="page-2-content">
+        <div>
+          <span class="editorial-tag">Editorial Profile</span>
+          <h2 class="section-title">WHO I AM</h2>
+          <div style="font-family: var(--font-serif); font-style: italic; font-size: 12pt; color: var(--color-burgundy); margin-top: 1mm;">
+            "Connecting the personality of a brand with the curiosity of an audience."
+          </div>
+        </div>
+
+        <div class="p2-layout-grid">
+          <div>
+            <p class="narrative-p">
+              I am a third-year <strong>B.Tech Computer Science and Data Science</strong> student actively channeling my creative perspective into brand communication, content planning, and social media execution.
+            </p>
+            <p class="narrative-p">
+              Currently working with <strong>Seoul Sip's Social Media Management team</strong>, I contribute to content brainstorming, creative campaign angles, and everyday community interactions. Working with a specialty coffee and cloud matcha brand has taught me how subtle visual aesthetics and intentional copy transform casual digital impressions into real-world brand loyalty.
+            </p>
+            <p class="narrative-p">
+              I enjoy finding creative ways to communicate a brand's unique character. I aim to grow in <strong>Content &amp; Communication</strong> and <strong>Social Media Management</strong>, bringing thoughtful execution, storytelling clarity, and genuine audience awareness.
+            </p>
+            <div class="academic-callout">
+              <strong style="color: var(--color-burgundy); font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 1mm;">Academic Background Context</strong>
+              Pursuing B.Tech in CS &amp; Data Science. This background instills analytical discipline, structured workflow management, and research rigor—applied toward creative social media communication.
+            </div>
+          </div>
+
+          <div class="skills-box">
+            <h3 class="skills-title">AREAS OF PRACTICAL EXPERIENCE</h3>
+            <div class="skills-grid-p2">
+              <div class="skill-row">
+                <span>Content Ideation</span>
+                <span class="skill-row-tag">Concepting</span>
+              </div>
+              <div class="skill-row">
+                <span>Content Planning</span>
+                <span class="skill-row-tag">Calendars</span>
+              </div>
+              <div class="skill-row">
+                <span>Social Media Management</span>
+                <span class="skill-row-tag">Platform</span>
+              </div>
+              <div class="skill-row">
+                <span>Brand Communication</span>
+                <span class="skill-row-tag">Tone &amp; Voice</span>
+              </div>
+              <div class="skill-row">
+                <span>Community Engagement</span>
+                <span class="skill-row-tag">Stories &amp; DMs</span>
+              </div>
+              <div class="skill-row">
+                <span>Promotional Concepts</span>
+                <span class="skill-row-tag">Campaigns</span>
+              </div>
+              <div class="skill-row">
+                <span>Audience Awareness</span>
+                <span class="skill-row-tag">Behavior</span>
+              </div>
+              <div class="skill-row">
+                <span>Creative Thinking</span>
+                <span class="skill-row-tag">Aesthetics</span>
+              </div>
+              <div class="skill-row">
+                <span>Content Coordination</span>
+                <span class="skill-row-tag">Workflow</span>
+              </div>
+              <div class="skill-row">
+                <span>Caption Writing &amp; Storytelling</span>
+                <span class="skill-row-tag">Hooks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-running-footer">
+        <span>Skills &amp; Narrative</span>
+        <span class="page-number">02 / 05</span>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         PAGE 3: SOCIAL MEDIA IN PRACTICE (SEOUL SIP)
+         ======================================================================= -->
+    <div class="pdf-page">
+      <div class="page-running-header">
+        <span>Himanshi Rajput &bull; Practical Experience</span>
+        <span>Case Study Spotlight</span>
+      </div>
+
+      <div class="page-3-content">
+        <div class="seoul-sip-banner-p3">
+          <div>
+            <span style="font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-blush); font-weight: 700;">Case Study Feature</span>
+            <h2 style="font-family: var(--font-headline); font-size: 20pt; line-height: 1; color: var(--color-cream);">SOCIAL MEDIA IN PRACTICE</h2>
+            <div style="font-size: 8pt; color: var(--color-blush-light);">Seoul Sip Cafe &bull; Speciality Coffee &amp; Cloud Matcha (Bhopal)</div>
+          </div>
+          <div style="text-align: right; font-size: 7.5pt; color: var(--color-cream);">
+            <div><strong>Role:</strong> Social Media Team</div>
+            <div><strong>Channel:</strong> @seoul__sip</div>
+          </div>
+        </div>
+
+        <div class="p3-grid">
+          <div>
+            <div class="resp-box-p3">
+              <div class="resp-num-p3">01</div>
+              <div class="resp-title-p3">CONTENT IDEATION &amp; BRAINSTORMING</div>
+              <p class="resp-desc-p3">Developing creative angles around ceremonial Cloud Matcha whisking, specialty coffee brews, and cozy evening cafe ambiance.</p>
+            </div>
+
+            <div class="resp-box-p3">
+              <div class="resp-num-p3">02</div>
+              <div class="resp-title-p3">PROMOTIONAL HOOKS &amp; LOCAL AWARENESS</div>
+              <p class="resp-desc-p3">Contributing to local discovery concepts like "Bhopal's best-kept secret" and positioning the cafe as a calm sanctuary for students and creatives.</p>
+            </div>
+
+            <div class="resp-box-p3">
+              <div class="resp-num-p3">03</div>
+              <div class="resp-title-p3">STORY PLANNING &amp; INTERACTION</div>
+              <p class="resp-desc-p3">Designing interactive story stickers (polls, mood matching, menu recommendations) to drive direct audience responses and build community affinity.</p>
+            </div>
+
+            <div class="resp-box-p3">
+              <div class="resp-num-p3">04</div>
+              <div class="resp-title-p3">CAPTION WRITING &amp; BRAND VOICE</div>
+              <p class="resp-desc-p3">Crafting warm, sensory microcopy that balances flavor notes with inviting, approachable invitations that feel personal rather than promotional.</p>
+            <div class="photo-split-p3">
+              <div class="mini-photo-box">
+                <img src="assets/images/cafe_latte_art.jpg" alt="Latte Art">
+                <div class="mini-photo-label">Beverage Craft</div>
+              </div>
+              <div class="mini-photo-box">
+                <img src="assets/images/cafe_syrup_bottles.jpg" alt="Syrup Bottles">
+                <div class="mini-photo-label">Cafe Ambiance</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="media-card-p3">
+              <img src="assets/images/seoul_sip_feed.jpg" alt="Seoul Sip Feed Screenshot">
+              <div style="font-size: 6.8pt; color: var(--color-charcoal-muted); margin-top: 1.5mm; font-style: italic; line-height: 1.35;">
+                <strong>Live Feed Architecture (@seoul__sip):</strong> Harmonizing ceremonial matcha whisking reels, 'Iced Matcha Latte — Sip the calm' graphics, 'Shhh... Bhopal's best-kept secret' storytelling, and customer community reels.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-running-footer">
+        <span>Seoul Sip Practical Experience</span>
+        <span class="page-number">03 / 05</span>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         PAGE 4: STRATEGIC CONTENT CONCEPTS
+         ======================================================================= -->
+    <div class="pdf-page">
+      <div class="page-running-header">
+        <span>Himanshi Rajput &bull; Strategic Content Concepts</span>
+        <span>Campaign Frameworks</span>
+      </div>
+
+      <div class="page-4-content">
+        <div>
+          <span class="editorial-tag">Strategic Planning</span>
+          <h2 class="section-title">CONTENT CONCEPTS</h2>
+          <div style="font-family: var(--font-serif); font-style: italic; font-size: 11pt; color: var(--color-burgundy); margin-top: 1mm;">
+            Three proactive campaigns designed to build curiosity and drive cafe footfall.
+          </div>
+        </div>
+
+        <div class="concepts-p4-grid">
+          <!-- Concept 1 -->
+          <div class="concept-item-p4">
+            <div class="concept-p4-left">
+              <span class="concept-p4-tag">Campaign 01</span>
+              <div class="concept-p4-title">THE CLOUD MATCHA RITUAL</div>
+              <div style="font-size: 7.2pt; color: var(--color-burgundy); font-weight: 600; margin-top: 1mm;">Product Education</div>
+            </div>
+            <div class="concept-p4-right">
+              <div class="concept-detail-line"><strong>Hook:</strong> "Ever wondered why we whisk our matcha with bamboo instead of metal?"</div>
+              <div class="concept-detail-line"><strong>Format:</strong> 3-Slide Carousel + 15s Whispering ASMR Pour Reel.</div>
+              <div class="concept-quote-p4">"Not all green is bitter. Watch how our ceremonial grade matcha transforms under 80 whisks into pure velvet."</div>
+              <div class="concept-detail-line"><strong>Objective:</strong> Demystify ceremonial matcha and drive first-time trial orders.</div>
+            </div>
+          </div>
+
+          <!-- Concept 2 -->
+          <div class="concept-item-p4">
+            <div class="concept-p4-left">
+              <span class="concept-p4-tag">Campaign 02</span>
+              <div class="concept-p4-title">STUDY, SIP &amp; SAVOR</div>
+              <div style="font-size: 7.2pt; color: var(--color-burgundy); font-weight: 600; margin-top: 1mm;">Lifestyle &amp; Community</div>
+            </div>
+            <div class="concept-p4-right">
+              <div class="concept-detail-line"><strong>Hook:</strong> "Your desk at home isn't inspiring you today. Pack your laptop—we saved you a quiet corner."</div>
+              <div class="concept-detail-line"><strong>Format:</strong> Day-in-the-Life Reel + "Table for One" photo series.</div>
+              <div class="concept-quote-p4">"Warm lofi, cold brew with clean notes, and warm light. Sometimes focus just needs the right corner."</div>
+              <div class="concept-detail-line"><strong>Objective:</strong> Position Seoul Sip as the tranquil study haven for students and remote creatives in Bhopal.</div>
+            </div>
+          </div>
+
+          <!-- Concept 3 -->
+          <div class="concept-item-p4">
+            <div class="concept-p4-left">
+              <span class="concept-p4-tag">Campaign 03</span>
+              <div class="concept-p4-title">SECRET MENU SUNDAYS</div>
+              <div style="font-size: 7.2pt; color: var(--color-burgundy); font-weight: 600; margin-top: 1mm;">Word-of-Mouth Hype</div>
+            </div>
+            <div class="concept-p4-right">
+              <div class="concept-detail-line"><strong>Hook:</strong> "Ask the barista for 'The Minal Sunset'. Only 25 glasses made this Sunday."</div>
+              <div class="concept-detail-line"><strong>Format:</strong> Countdown teaser story + secret password drop.</div>
+              <div class="concept-quote-p4">"Not printed on our menu board. Whisper the secret name between 3 PM &amp; 6 PM this Sunday."</div>
+              <div class="concept-detail-line"><strong>Objective:</strong> Spark viral curiosity, story shares, and rapid Sunday footfall.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-running-footer">
+        <span>Campaign Frameworks</span>
+        <span class="page-number">04 / 05</span>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         PAGE 5: SELECTED WORK & CLOSING SPREAD
+         ======================================================================= -->
+    <div class="pdf-page">
+      <div class="page-running-header">
+        <span>Himanshi Rajput &bull; Repertoire &amp; Contact</span>
+        <span>Editorial Portfolio</span>
+      </div>
+
+      <div class="page-5-content">
+        <div>
+          <span class="editorial-tag">Work Disciplines</span>
+          <h2 class="section-title">MY WORK INCLUDES</h2>
+        </div>
+
+        <div class="disciplines-p5-grid">
+          <div class="disc-card-p5">
+            <span class="disc-num-p5">01</span>
+            <div class="disc-title-p5">AESTHETIC PHOTOGRAPHY</div>
+            <p class="disc-desc-p5">Capturing natural light, liquid textures, ceramic details, and ambient cafe warmth.</p>
+          </div>
+
+          <div class="disc-card-p5">
+            <span class="disc-num-p5">02</span>
+            <div class="disc-title-p5">REEL STORYBOARDING</div>
+            <p class="disc-desc-p5">Developing high-retention short-form concepts with strong 0-2s hooks and calm pacing.</p>
+          </div>
+
+          <div class="disc-card-p5">
+            <span class="disc-num-p5">03</span>
+            <div class="disc-title-p5">CONTENT CADENCE</div>
+            <p class="disc-desc-p5">Curating structured 30-day content pillars balancing education, aesthetics, and community.</p>
+          </div>
+
+          <div class="disc-card-p5">
+            <span class="disc-num-p5">04</span>
+            <div class="disc-title-p5">CAPTION STORYTELLING</div>
+            <p class="disc-desc-p5">Drafting approachable, appetite-inducing copy that invites genuine two-way conversation.</p>
+          </div>
+        </div>
+
+        <!-- Closing Deep Wine Spread -->
+        <div class="closing-spread-p5">
+          <div>
+            <span style="font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-blush); font-weight: 700;">Collaboration</span>
+            <h3 class="closing-title-p5">LET'S CONNECT.</h3>
+            <p class="closing-desc-p5">
+              Open for opportunities in Content &amp; Communication, Social Media Management, Content Planning, and Brand Storytelling.
+            </p>
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: 13pt; color: var(--color-blush);">
+              — Himanshi Rajput
+            </div>
+          </div>
+
+          <div class="contact-box-p5">
+            <div class="contact-line-p5">
+              <span class="lbl">Email</span>
+              <span class="val">himanshi.rajput@email.com</span>
+            </div>
+            <div class="contact-line-p5">
+              <span class="lbl">LinkedIn</span>
+              <span class="val">linkedin.com/in/himanshi-rajput-3b0643330</span>
+            </div>
+            <div class="contact-line-p5">
+              <span class="lbl">Instagram (Brand Work)</span>
+              <span class="val">instagram.com/seoul__sip (@seoul__sip)</span>
+            </div>
+            <div class="contact-line-p5">
+              <span class="lbl">Location</span>
+              <span class="val">Bhopal, India &bull; Open for Remote/Hybrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-running-footer">
+        <span>Editorial Portfolio &bull; 2026 Edition</span>
+        <span class="page-number">05 / 05</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
