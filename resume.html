@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himanshi Rajput — Resume (PDF)</title>
+  <meta name="description" content="Professional Resume of Himanshi Rajput, Content & Social Media Specialist at Seoul Sip.">
+
+  <!-- Google Fonts: Bebas Neue, Playfair Display, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       HIMANSHI RAJPUT — EDITORIAL RESUME (A4 SINGLE-PAGE SPECIFICATION)
+       ========================================================================== */
+    :root {
+      --color-burgundy: #651522;
+      --color-wine: #4B0D19;
+      --color-cream: #F7F2EA;
+      --color-cream-light: #FCFAF6;
+      --color-blush: #D9B7B5;
+      --color-charcoal: #282426;
+      --color-charcoal-muted: #554D50;
+      --color-white: #FFFFFF;
+      --color-border: rgba(40, 36, 38, 0.14);
+
+      --font-headline: 'Bebas Neue', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #E6E1D8;
+      font-family: var(--font-sans);
+      color: var(--color-charcoal);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Screen-only Print Bar */
+    .print-controls-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--color-charcoal);
+      color: var(--color-white);
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-action {
+      background: var(--color-burgundy);
+      color: var(--color-cream);
+      border: 1px solid var(--color-burgundy);
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: var(--color-wine);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-cream);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-cream);
+    }
+
+    /* A4 Resume Sheet */
+    .resume-sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 15mm auto;
+      background: var(--color-cream);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+      padding: 14mm 16mm 12mm 16mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Header Block */
+    .resume-header {
+      border-bottom: 2px solid var(--color-burgundy);
+      padding-bottom: 4mm;
+      margin-bottom: 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left .name {
+      font-family: var(--font-headline);
+      font-size: 34pt;
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--color-charcoal);
+      text-transform: uppercase;
+    }
+
+    .header-left .name .star {
+      color: var(--color-burgundy);
+      font-size: 0.6em;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    .header-left .title-sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 11pt;
+      color: var(--color-burgundy);
+      margin-top: 1mm;
+      display: block;
+    }
+
+    .header-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2mm;
+      font-size: 7.6pt;
+      color: var(--color-charcoal-muted);
+    }
+
+    .header-right a {
+      color: var(--color-charcoal);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .header-right a:hover {
+      color: var(--color-burgundy);
+    }
+
+    .header-right .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* Layout Grid */
+    .resume-body-grid {
+      display: grid;
+      grid-template-columns: 116mm 58mm;
+      gap: 7mm;
+      flex-grow: 1;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-family: var(--font-headline);
+      font-size: 13pt;
+      letter-spacing: 0.06em;
+      color: var(--color-burgundy);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1mm;
+      margin-bottom: 2.5mm;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title::after {
+      content: "•••";
+      font-size: 7pt;
+      letter-spacing: 0.15em;
+      color: var(--color-blush);
+    }
+
+    /* Left Column Components */
+    .summary-text {
+      font-size: 8pt;
+      line-height: 1.55;
+      color: #383436;
+      margin-bottom: 3.5mm;
+      text-align: justify;
+    }
+
+    .experience-block {
+      margin-bottom: 3.5mm;
+    }
+
+    .exp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8mm;
+    }
+
+    .exp-role {
+      font-family: var(--font-headline);
+      font-size: 11pt;
+      color: var(--color-charcoal);
+      letter-spacing: 0.02em;
+    }
+
+    .exp-dates {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-burgundy);
+    }
+
+    .exp-sub-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.6pt;
+      color: var(--color-charcoal-muted);
+      margin-bottom: 1.5mm;
+    }
+
+    .exp-company {
+      font-weight: 700;
+      color: var(--color-wine);
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4mm;
+    }
+
+    .exp-bullets li {
+      font-size: 7.7pt;
+      line-height: 1.45;
+      color: #3A3537;
+      position: relative;
+      padding-left: 3.5mm;
+    }
+
+    .exp-bullets li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: -0.5px;
+      color: var(--color-burgundy);
+      font-size: 8pt;
+    }
+
+    /* Projects / Campaign Concepts */
+    .campaign-mini-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 2.2mm 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .camp-title {
+      font-family: var(--font-headline);
+      font-size: 9.5pt;
+      letter-spacing: 0.03em;
+      color: var(--color-charcoal);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .camp-tag {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-burgundy);
+    }
+
+    .camp-desc {
+      font-size: 7.3pt;
+      line-height: 1.4;
+      color: var(--color-charcoal-muted);
+      margin-top: 0.5mm;
+    }
+
+    /* Right Column Styling */
+    .skills-cluster {
+      margin-bottom: 3.5mm;
+    }
+
+    .skill-pills-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2mm;
+    }
+
+    .skill-row-badge {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 1.4mm 2.2mm;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: var(--color-charcoal);
+    }
+
+    .skill-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-burgundy);
+    }
+
+    .edu-block {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-burgundy);
+      padding: 2.5mm 3mm;
+      margin-bottom: 3.5mm;
+    }
+
+    .edu-degree {
+      font-family: var(--font-headline);
+      font-size: 9.5pt;
+      line-height: 1.1;
+      color: var(--color-charcoal);
+      margin-bottom: 0.5mm;
+    }
+
+    .edu-meta {
+      font-size: 6.8pt;
+      color: var(--color-burgundy);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1mm;
+    }
+
+    .edu-note {
+      font-size: 7.1pt;
+      line-height: 1.4;
+      color: var(--color-charcoal-muted);
+    }
+
+    .tool-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2mm;
+    }
+
+    .tool-tag {
+      font-size: 6.7pt;
+      font-weight: 600;
+      background: var(--color-cream-light);
+      border: 1px solid var(--color-border);
+      padding: 1mm 2mm;
+      color: var(--color-charcoal);
+    }
+
+    /* Running Footer */
+    .resume-footer {
+      border-top: 1px solid var(--color-border);
+      padding-top: 2.5mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7pt;
+      color: var(--color-charcoal-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @media print {
+      body {
+        background: transparent !important;
+      }
+      .print-controls-bar {
+        display: none !important;
+      }
+      .resume-sheet {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Only Print Controls -->
+  <div class="print-controls-bar">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="index.html" class="btn-outline">← Back to Portfolio</a>
+      <span style="font-size: 0.85rem; color: var(--color-blush);">Himanshi Rajput &bull; Professional Resume</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="Himanshi_Rajput_Resume.pdf" download class="btn-action">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download PDF Resume</span>
+      </a>
+      <button onclick="window.print()" class="btn-outline">
+        Print Page
+      </button>
+    </div>
+  </div>
+
+  <div class="resume-sheet">
+    
+    <!-- Top Header -->
+    <header class="resume-header">
+      <div class="header-left">
+        <h1 class="name">HIMANSHI RAJPUT<span class="star">✳</span></h1>
+        <span class="title-sub">Content &amp; Communication Specialist &bull; Social Media Management</span>
+      </div>
+
+      <div class="header-right">
+        <div><a href="mailto:himanshi.rajput@email.com">himanshi.rajput@email.com</a></div>
+        <div><a href="https://www.linkedin.com/in/himanshi-rajput-3b0643330" target="_blank">linkedin.com/in/himanshi-rajput-3b0643330</a></div>
+        <div><a href="https://portfolio-nine-mauve-xzjawfgb1n.vercel.app" target="_blank">portfolio-nine-mauve-xzjawfgb1n.vercel.app</a></div>
+        <div><a href="https://www.instagram.com/seoul__sip/" target="_blank">@seoul__sip (Brand Collaboration)</a></div>
+        <div>Bhopal, India &bull; Open for Remote / Hybrid</div>
+      </div>
+    </header>
+
+    <!-- Two-Column Editorial Grid -->
+    <div class="resume-body-grid">
+      
+      <!-- Left Column (Core Experience & Campaigns) -->
+      <div class="col-main">
+        
+        <!-- Profile / Summary -->
+        <section style="margin-bottom: 3.5mm;">
+          <h2 class="section-title">PROFILE</h2>
+          <p class="summary-text">
+            Creative communicator and 3rd-year B.Tech Computer Science and Data Science student exploring the intersection of content strategy, audience engagement, and brand storytelling. Currently contributing to <strong>Seoul Sip's Social Media Management team</strong>, leading beverage storytelling, creative campaign ideation, and community touchpoints. Combines analytical discipline with an aesthetic eye for visual and verbal brand expression, passionate about helping emerging lifestyle brands connect meaningfully with real audiences.
+          </p>
+        </section>
+
+        <!-- Practical Social Media Experience -->
+        <section style="margin-bottom: 3.5mm;">
+          <h2 class="section-title">PRACTICAL EXPERIENCE</h2>
+          
+          <div class="experience-block">
+            <div class="exp-header-row">
+              <span class="exp-role">SOCIAL MEDIA MANAGEMENT TEAM MEMBER</span>
+              <span class="exp-dates">OCT 2026 – PRESENT</span>
+            </div>
+            <div class="exp-sub-row">
+              <span class="exp-company">Seoul Sip Cafe (Speciality Coffee &amp; Cloud Matcha)</span>
+              <span>Bhopal, India</span>
+            </div>
+            
+            <ul class="exp-bullets">
+              <li>
+                <strong>Content Ideation &amp; Brainstorming:</strong> Develop creative angles and visual hooks highlighting Seoul Sip’s signature Cloud Matcha whisking, specialty cold brews, and aesthetic evening ambiance.
+              </li>
+              <li>
+                <strong>Promotional Campaign Formulation:</strong> Co-created localized awareness initiatives like <em>"Shhh... Bhopal's best-kept secret is out!"</em> and positioned the cafe as a calm sanctuary for students and remote creatives.
+              </li>
+              <li>
+                <strong>Interactive Community Storytelling:</strong> Plan daily story sequences, engagement stickers (flavor polls, recommendation quizzes, and mood matching), driving direct audience replies and community loyalty.
+              </li>
+              <li>
+                <strong>Caption Writing &amp; Brand Voice:</strong> Draft taste-evocative, conversational microcopy that translates the cafe's serene aesthetic into welcoming customer touchpoints.
+              </li>
+              <li>
+                <strong>Visual Curation &amp; Styling:</strong> Coordinate beverage presentation, lighting composition, and feed architecture to preserve visual consistency across product spotlights and reels.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Strategic Campaign Frameworks -->
+        <section>
+          <h2 class="section-title">STRATEGIC CONTENT CONCEPTS</h2>
+          
+          <div class="campaign-mini-box">
+            <div class="camp-title">
+              <span>THE CLOUD MATCHA RITUAL</span>
+              <span class="camp-tag">Educational &bull; Reel + Carousel</span>
+            </div>
+            <p class="camp-desc">
+              Structured a 3-part educational series demystifying ceremonial bamboo whisking; paired with a sensory ASMR pour reel to accelerate first-time customer trials.
+            </p>
+          </div>
+
+          <div class="campaign-mini-box">
+            <div class="camp-title">
+              <span>STUDY, SIP &amp; SAVOR</span>
+              <span class="camp-tag">Lifestyle &bull; Community</span>
+            </div>
+            <p class="camp-desc">
+              Campaign targeting Bhopal university students and remote professionals, framing Seoul Sip as a tranquil workspace sanctuary to drive weekday afternoon footfall.
+            </p>
+          </div>
+
+          <div class="campaign-mini-box">
+            <div class="camp-title">
+              <span>SECRET MENU SUNDAYS</span>
+              <span class="camp-tag">Word-of-Mouth &bull; FOMO</span>
+            </div>
+            <p class="camp-desc">
+              Formulated limited-batch experimental drink drops announced exclusively via password teaser stories to create weekend urgency and viral word-of-mouth curiosity.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column (Skills, Academic Context, Tools) -->
+      <div class="col-sidebar">
+        
+        <!-- Core Competencies -->
+        <section class="skills-cluster">
+          <h2 class="section-title">SKILLS &amp; EXPERTISE</h2>
+          <div class="skill-pills-wrap">
+            <div class="skill-row-badge">
+              <span>Content Ideation</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Content Planning &amp; Cadence</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Social Media Management</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Brand Communication</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Community Engagement</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Promotional Concepts</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Audience Awareness</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Short-form Storyboarding</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Caption Writing &amp; Hooks</span>
+              <div class="skill-dot"></div>
+            </div>
+            <div class="skill-row-badge">
+              <span>Beverage Styling &amp; Visuals</span>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Academic Foundation -->
+        <section style="margin-bottom: 3.5mm;">
+          <h2 class="section-title">EDUCATION</h2>
+          <div class="edu-block">
+            <div class="edu-degree">B.TECH IN COMPUTER SCIENCE &amp; DATA SCIENCE</div>
+            <div class="edu-meta">3rd Year (Expected 2028) &bull; Bhopal, India</div>
+            <p class="edu-note">
+              Provides analytical rigor, structured workflows, research discipline, and data-conscious audience understanding directly applied to creative brand strategy.
+            </p>
+          </div>
+        </section>
+
+        <!-- Tools & Platforms -->
+        <section style="margin-bottom: 3.5mm;">
+          <h2 class="section-title">TOOLS &amp; CHANNELS</h2>
+          <div class="tool-tags-wrap">
+            <span class="tool-tag">Instagram Strategy</span>
+            <span class="tool-tag">Meta Business Suite</span>
+            <span class="tool-tag">LinkedIn</span>
+            <span class="tool-tag">Canva Visuals</span>
+            <span class="tool-tag">CapCut Storyboarding</span>
+            <span class="tool-tag">Notion Calendars</span>
+            <span class="tool-tag">Content Cadence</span>
+            <span class="tool-tag">Audience Analytics</span>
+          </div>
+        </section>
+
+        <!-- Languages & Interests -->
+        <section>
+          <h2 class="section-title">FOCUS AREAS</h2>
+          <div style="font-size: 7.3pt; line-height: 1.5; color: var(--color-charcoal-muted); background: var(--color-white); border: 1px solid var(--color-border); padding: 2mm 2.5mm;">
+            <strong>Disciplines:</strong> Brand Storytelling, Lifestyle &amp; Cafe Culture, Audience Psychology, Community Growth.
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- Running Footer -->
+    <footer class="resume-footer">
+      <span>Himanshi Rajput &bull; Content &amp; Social Media Portfolio Resume</span>
+      <span>portfolio-nine-mauve-xzjawfgb1n.vercel.app</span>
+      <span>2026 Edition</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
